@@ -39,6 +39,7 @@ This client server echo model is based on TCP/IP with only IPv4 address specifie
 
 **4. Test Cases and Errat**
 * Here is a screenshot showing 3 clients get connected with the server separately:
+![](connected.png?raw=true)
 
 * Here is a screenshot showing 3 clients are communicating with server and server echos back the message it received.
 ![](communication.png?raw=true)
