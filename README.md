@@ -38,8 +38,17 @@ If the ip address is not specified, the client will choose to connect to the ser
 This client server echo model is based on TCP/IP with only IPv4 address specified. Optimization is done for the common read and write system calls. The updated readline function is about to handle the common issues which can happen in real network based applications. Readline reads a whole line each time, but the upper limit for the number of characters it can read is 2000 bytes as a defined value on variable ***BUFSIZE***. The written function wraps the regular write function with specified number of bytes as an argument. To make server be concurrent, the server use fork() system call to make a child process to handle the communication between the server the newly connected client. When the client a child process responsible for is disconnected, a message like "Child process <pid> terminated" will be sent to the initial server. This is done with signal system call.
 
 **4. Test Cases and Errat**
-Here are some screenshots of test cases done on Linux:
-![alt text]{connected.png}
+* Here is a screenshot showing 3 clients get connected with the server separately:
+![](connected.png?raw=true)
+
+* Here is a screenshot showing 3 clients are communicating with server and server echos back the message it received.
+![](communication.png?raw=true)
+
+* Here is a screenshot showing a client disconnected from the server and the server gets know a client is disconnected:
+![](disconnected_1.png?raw=true)
+
+* Here is a screenshot showing all clients disconnected from the server was informed:
+![](disconnected2.png?raw=true)
 
 **5. Potential Improvments**
 
